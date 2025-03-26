@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyChef2 App</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    
+    <div id="dish-menu"></div>
+    <button id="add-dish-button">Add Dish</button>
+
+    <div id="selected-ramen-container">
+        <h2 id="dish-name"></h2>
+        <p>Chef: <span id="dish-chef"></span></p>
+        <img id="selected-dish-image" src="" alt="">
+        <p>Rating: <span id="rating-value"></span></p>
+        <p>Comment: <span id="comment-value"></span></p>
+    </div>
+    <form id="new-dish-form">
+        <input type="text" id="name" placeholder="Dish Name" required>
+        <input type="text" id="chef" placeholder="Chef" required>
+        <input type="url" id="image" placeholder="Image URL" required>
+        <input type="number" id="rating" placeholder="Rating (1-5)" min="1" max="5">
+        <textarea id="comment" placeholder="Comment"></textarea>
+        <button type="submit">Add Ramen</button>
+    </form>
+    <script src="./index.js"></script>
+</body>
+</html>
