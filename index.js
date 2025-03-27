@@ -1,7 +1,7 @@
 const dishes = [
-    { id: 1, name: "Egg curry", chef: "John", image: "https://i.pinimg.com/474x/26/f1/19/26f119326fc93d7b4a387c3b4dedb75a.jpg", rating: 5, comment: "Delicious!" },
-    { id: 2, name: "Noodles", chef: "Kelvin", image: "https://i.pinimg.com/236x/10/fb/b5/10fbb5f46b9e4a6b66fd73927c700eb5.jpg", rating: 4, comment: "Very flavorful!" },
-    { id: 3, name: "Pasta", chef: "Louis", image: "https://i.pinimg.com/236x/db/07/2d/db072d20bc9a2de134c1a39b52f320a3.jpg", rating: 3, comment: "too salty" }
+    { id: 1, name: "Sushi", chef: "John Kivalya", image: "https://i.pinimg.com/474x/26/f1/19/26f119326fc93d7b4a387c3b4dedb75a.jpg", rating: 5, comment: "Delicious!" },
+    { id: 2, name: "Pilau", chef: "Kelvin Musyoka", image: "https://i.pinimg.com/236x/10/fb/b5/10fbb5f46b9e4a6b66fd73927c700eb5.jpg", rating: 4, comment: "Very flavorful!" },
+    { id: 3, name: "Ugali and fish", chef: "Louis Njeru", image: "https://i.pinimg.com/236x/db/07/2d/db072d20bc9a2de134c1a39b52f320a3.jpg", rating: 3, comment: "too salty" }
 ];
 
 // Function to display dish images with names
@@ -25,7 +25,6 @@ function displayDishes() {
         
         dishContainer.appendChild(img);
         dishContainer.appendChild(dishName);
-        
         dishMenu.appendChild(dishContainer);
     });
 }

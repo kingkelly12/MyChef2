@@ -6,12 +6,14 @@ body {
 }
 #dish-menu {
     display: flex;
-    margin-left: 400px;
+    margin-left: 600px;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
 }
 .dish-container {
     text-align: center;
+    margin: 10px;
+    align-items: center;
 }
 .dish-image {
     width: 150px;
@@ -19,6 +21,7 @@ body {
     object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
+    align-items: center;
 }
 .dish-name {
     margin-top: 5px;
@@ -27,9 +30,10 @@ body {
 }
 #selected-dish-container {
     margin-top: 20px;
+    margin-left: 50px;
     padding: 20px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: none;
 }
@@ -65,9 +69,9 @@ body {
 #new-dish-form button:hover {
     background-color: #0056b3;
 }
-#add-dish-button {
-    padding: 10px 20px;
-    background-color: #28a745;
+#order-food-button {
+    padding: 10px;
+    background-color: blue;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -75,6 +79,14 @@ body {
     margin-bottom: 20px;
     margin-left: 600px;
 }
-#add-dish-button:hover {
-    background-color: #218838;
+#hire-chef-button {
+    padding: 10px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 600px;
 }
+
