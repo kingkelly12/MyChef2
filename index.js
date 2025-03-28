@@ -1,36 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-// Function to fetch dishes from the server
-async function fetchDishes() {
-    try {
-        const response = await fetch('https://github.com/db.json'); 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+    // Function to fetch dishes from the server
+    async function fetchDishes() {
+        try {
+            const response = await fetch('https://kingkelly12.github.io/host.api/db.json'); 
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Error fetching dishes:', error);
+            return []; // Return an empty array in case of an error
         }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching dishes:', error);
-        return []; // Return an empty array in case of an error
     }
-}
 
     const orderFoodButton = document.getElementById('order-food-button');
     const hireChefButton = document.getElementById('hire-chef-button');
     const messageDisplay = document.getElementById('message-display');
-  
-    orderFoodButton.addEventListener('click', function() {
-      messageDisplay.textContent = 'Ordering food... Please select your dishes!';
-    });
-  
-    hireChefButton.addEventListener('click', function() {
-      messageDisplay.textContent = 'Hiring a chef... Please provide your requirements!';
-    });
-  });
-  
 
-
-// Function to display dish images with names
+    orderFoodButton.addEventListener('click', async function() { // Added async here
+        messageDisplay.textContent = 'Ordering food... Please select your dishes!';
+        const dishes = await fetchDishes(); // Fetch dishes when the button is clicked
+        if (dishes && dishes.length > 0) {
+            console.log('Fetched dishes:', dishes);
+            // Process the fetched dishes here 
+            // Function to display dish images with names
 function displayDishes() {
     const dishMenu = document.getElementById('dish-menu');
     dishMenu.innerHTML = ''; // Clear existing images
@@ -54,6 +49,16 @@ function displayDishes() {
         dishMenu.appendChild(dishContainer);
     });
 }
+        } else {
+            messageDisplay.textContent = 'Failed to fetch dishes.';
+        }
+    });
+
+    hireChefButton.addEventListener('click', function() {
+        messageDisplay.textContent = 'Hiring a chef... Please provide your requirements!';
+    });
+});
+  
 
 // Function to handle dish image click
 function handleClick(dish) {
