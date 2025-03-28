@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const orderFoodButton = document.getElementById('order-food-button');
+    const hireChefButton = document.getElementById('hire-chef-button');
+    const messageDisplay = document.getElementById('message-display');
+  
+    orderFoodButton.addEventListener('click', function() {
+      messageDisplay.textContent = 'Ordering food... Please select your dishes!';
+    });
+  
+    hireChefButton.addEventListener('click', function() {
+      messageDisplay.textContent = 'Hiring a chef... Please provide your requirements!';
+    });
+  });
+
 const dishes = [
     { id: 1, name: "Noodles & egg curry", chef: "John Kivalya", image: "https://i.pinimg.com/474x/26/f1/19/26f119326fc93d7b4a387c3b4dedb75a.jpg", rating: 5, comment: "Delicious!" },
     { id: 2, name: "Italian spaghetti", chef: "Kelvin Musyoka", image: "https://i.pinimg.com/236x/10/fb/b5/10fbb5f46b9e4a6b66fd73927c700eb5.jpg", rating: 4, comment: "Very flavorful!" },
