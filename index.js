@@ -44,29 +44,6 @@ function handleClick(dish) {
     document.getElementById('selected-dish-container').style.display = 'block';
 }
 
-// Function to handle new dish form submission
-function addSubmitListener() {
-    const form = document.getElementById('new-dish-form');
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        
-        const newDish = {
-            id: dishes.length + 1,
-            name: document.getElementById('name').value,
-            chef: document.getElementById('chef').value,
-            image: document.getElementById('image').value,
-            rating: document.getElementById('rating').value,
-            comment: document.getElementById('comment').value
-        };
-
-        dishes.push(newDish);
-        displayDishes();
-        form.reset();
-        handleClick(newDish);
-        document.getElementById('new-dish-form').style.display = 'none'; // Hide the form after submission
-    });
-}
-
 // Function to toggle the form visibility
 function toggleForm() {
     const form = document.getElementById('new-dish-form');
