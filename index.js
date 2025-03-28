@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+// Function to fetch dishes from the server
+async function fetchDishes() {
+    try {
+        const response = await fetch('https://github.com/db.json'); 
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching dishes:', error);
+        return []; // Return an empty array in case of an error
+    }
+}
+
     const orderFoodButton = document.getElementById('order-food-button');
     const hireChefButton = document.getElementById('hire-chef-button');
     const messageDisplay = document.getElementById('message-display');
@@ -11,12 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
       messageDisplay.textContent = 'Hiring a chef... Please provide your requirements!';
     });
   });
+  
 
-const dishes = [
-    { id: 1, name: "Noodles & egg curry", chef: "John Kivalya", image: "https://i.pinimg.com/474x/26/f1/19/26f119326fc93d7b4a387c3b4dedb75a.jpg", rating: 5, comment: "Delicious!" },
-    { id: 2, name: "Italian spaghetti", chef: "Kelvin Musyoka", image: "https://i.pinimg.com/236x/10/fb/b5/10fbb5f46b9e4a6b66fd73927c700eb5.jpg", rating: 4, comment: "Very flavorful!" },
-    { id: 3, name: "Chinese noodles", chef: "Louis Njeru", image: "https://i.pinimg.com/236x/db/07/2d/db072d20bc9a2de134c1a39b52f320a3.jpg", rating: 3, comment: "too salty" }
-];
 
 // Function to display dish images with names
 function displayDishes() {
